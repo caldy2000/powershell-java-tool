@@ -9,6 +9,7 @@ function to stop all gradle processes, include GradleDaemon and GradleServer
 #>
 function stopGradle {
 	get-process | Where-Object CommandLine -Like '*Gradle*' | Select-Object Id | Stop-Process
+  Write-Warning "gradle daemon process has been terminated."
 }
 
 <#
